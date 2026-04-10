@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Terms of Service',
+  title: 'Terms of Service | Nova Analytics',
   robots: {
     index: false
   }
@@ -28,7 +28,7 @@ export default function TermsOfServicePage() {
         <section>
           <h2 className='text-foreground mb-3 text-xl font-semibold'>Introduction</h2>
           <p className='text-muted-foreground text-base leading-relaxed'>
-            Welcome to our application. These Terms of Service govern your access to and use of our
+            Welcome to Nova Analytics. These Terms of Service govern your access to and use of our
             platform. By accessing or using this application, you agree to be bound by these terms.
             Please read them carefully before proceeding to use our services.
           </p>

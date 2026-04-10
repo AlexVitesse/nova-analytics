@@ -4,35 +4,35 @@ import { Card, CardHeader, CardContent, CardTitle, CardDescription } from '@/com
 const salesData = [
   {
     name: 'Olivia Martin',
-    email: 'olivia.martin@email.com',
+    email: 'olivia.martin@novaanalytics.io',
     avatar: 'https://api.slingacademy.com/public/sample-users/1.png',
     fallback: 'OM',
     amount: '+$1,999.00'
   },
   {
     name: 'Jackson Lee',
-    email: 'jackson.lee@email.com',
+    email: 'jackson.lee@novaanalytics.io',
     avatar: 'https://api.slingacademy.com/public/sample-users/2.png',
     fallback: 'JL',
     amount: '+$39.00'
   },
   {
     name: 'Isabella Nguyen',
-    email: 'isabella.nguyen@email.com',
+    email: 'isabella.nguyen@novaanalytics.io',
     avatar: 'https://api.slingacademy.com/public/sample-users/3.png',
     fallback: 'IN',
     amount: '+$299.00'
   },
   {
     name: 'William Kim',
-    email: 'will@email.com',
+    email: 'will@novaanalytics.io',
     avatar: 'https://api.slingacademy.com/public/sample-users/4.png',
     fallback: 'WK',
     amount: '+$99.00'
   },
   {
     name: 'Sofia Davis',
-    email: 'sofia.davis@email.com',
+    email: 'sofia.davis@novaanalytics.io',
     avatar: 'https://api.slingacademy.com/public/sample-users/5.png',
     fallback: 'SD',
     amount: '+$39.00'
