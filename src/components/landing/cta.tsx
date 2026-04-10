@@ -7,7 +7,7 @@ export function CTA() {
   return (
     <section className="relative overflow-hidden py-24 sm:py-32">
       {/* Background */}
-      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-indigo-700 via-indigo-600 to-violet-700" />
+      <div className="absolute inset-0 -z-10 bg-primary" />
       
       {/* Pattern Overlay */}
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.1),transparent_50%),radial-gradient(circle_at_70%_80%,rgba(255,255,255,0.1),transparent_50%)]" />
