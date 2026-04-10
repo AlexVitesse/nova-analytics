@@ -15,10 +15,25 @@
 // Current: Mock (in-memory fake data for demo/prototyping)
 // ============================================================
 
+import { createClient } from '@/lib/supabase/server';
 import { fakeUsers } from '@/constants/mock-api-users';
 import { NextRequest, NextResponse } from 'next/server';
 
+async function authenticateRequest() {
+  const supabase = await createClient();
+  const { data: { user } } = await supabase.auth.getUser();
+  if (!user) {
+    return null;
+  }
+  return user;
+}
+
 export async function GET(request: NextRequest) {
+  const user = await authenticateRequest();
+  if (!user) {
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+  }
+
   const { searchParams } = request.nextUrl;
 
   const page = Number(searchParams.get('page') ?? 1);
@@ -39,6 +54,11 @@ export async function GET(request: NextRequest) {
 }
 
 export async function POST(request: NextRequest) {
+  const user = await authenticateRequest();
+  if (!user) {
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+  }
+
   const body = await request.json();
   const data = await fakeUsers.createUser(body);
   return NextResponse.json(data, { status: 201 });

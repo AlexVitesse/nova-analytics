@@ -42,10 +42,6 @@ export default function AppSidebar() {
   const router = useRouter();
   const filteredGroups = useFilteredNavGroups(navGroups);
 
-  React.useEffect(() => {
-    // Side effects based on sidebar state changes
-  }, [isOpen]);
-
   return (
     <Sidebar collapsible='icon'>
       <SidebarHeader className='group-data-[collapsible=icon]:pt-4'>
