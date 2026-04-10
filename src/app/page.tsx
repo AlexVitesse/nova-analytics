@@ -5,6 +5,7 @@ import { TrustBar } from '@/components/landing/trust-bar';
 import { Features } from '@/components/landing/features';
 import { DashboardPreview } from '@/components/landing/dashboard-preview';
 import { Stats } from '@/components/landing/stats';
+import { Pricing } from '@/components/landing/pricing';
 import { CTA } from '@/components/landing/cta';
 import { Footer } from '@/components/landing/footer';
 import { Skeleton } from '@/components/ui/skeleton';
@@ -41,6 +42,9 @@ export default function Home() {
       </Suspense>
       <Suspense fallback={<SectionSkeleton />}>
         <Stats />
+      </Suspense>
+      <Suspense fallback={<SectionSkeleton />}>
+        <Pricing />
       </Suspense>
       <CTA />
       <Footer />

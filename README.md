@@ -1,12 +1,45 @@
 # Nova Analytics
 
+<p align="center">
+  <img src="./hero-banner.png" alt="Nova Analytics Hero Banner" width="100%">
+</p>
+
+<p align="center">
+  <a href="https://nextjs.org/">
+    <img src="https://img.shields.io/badge/Next.js-16-black?logo=next.js" alt="Next.js">
+  </a>
+  <a href="https://tailwindcss.com/">
+    <img src="https://img.shields.io/badge/Tailwind_CSS-v4-38B2AC?logo=tailwind-css" alt="Tailwind CSS">
+  </a>
+  <a href="https://supabase.com/">
+    <img src="https://img.shields.io/badge/Supabase-Auth-3ECF8E?logo=supabase" alt="Supabase">
+  </a>
+  <a href="https://tanstack.com/">
+    <img src="https://img.shields.io/badge/TanStack-Query-FF4154?logo=react-query" alt="TanStack Query">
+  </a>
+  <a href="LICENSE">
+    <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT">
+  </a>
+</p>
+
+<p align="center">
+  <strong>Live Demo:</strong> <a href="#">Coming soon</a> | 
+  <strong>Test Email:</strong> reviewer@novaanalytics.io | 
+  <strong>Password:</strong> reviewer123!
+</p>
+
+---
+
 Intelligent analytics dashboard for modern teams. Built as a whitelabeled solution for Nova Analytics, featuring a responsive landing page, secure authentication, and a full-featured dashboard.
 
-**Live Demo:** [https://nova-analytics-nu.vercel.app](https://nova-analytics-nu.vercel.app)
+> [!TIP]
+> Nova Analytics now supports an advanced multi-theme system. You can switch between "Midnight", "Ethereal", and "Neon" themes directly from the dashboard settings or via the command palette (Cmd+K).
 
-**Test Credentials:**
-- Email: `reviewer@novaanalytics.io`
-- Password: `reviewer123!`
+> [!IMPORTANT]
+> **Beta Release Notes:**
+> *   Current version uses mock data for the dashboard. To connect your real database, update the services in `src/features/*/api/service.ts`.
+> *   Email confirmation is currently disabled in Supabase Auth settings to facilitate faster review.
+> *   Ensure you have configured your `.env.local` with valid Supabase credentials before running `npm run dev`.
 
 ## Tech Stack
 
