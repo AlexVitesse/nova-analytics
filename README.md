@@ -23,7 +23,7 @@
 </p>
 
 <p align="center">
-  <strong>Live Demo:</strong> <a href="#">Coming soon</a> | 
+  <strong>Live Demo:</strong> <a href="https://nova-analytics-nu.vercel.app">https://nova-analytics-nu.vercel.app</a> |
   <strong>Test Email:</strong> reviewer@novaanalytics.io | 
   <strong>Password:</strong> reviewer123!
 </p>
