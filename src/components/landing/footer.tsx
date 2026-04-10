@@ -1,6 +1,7 @@
 "use client"
 
-import { Sparkles, Globe, Mail } from "lucide-react"
+import Image from "next/image"
+import { Globe, Mail } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const footerLinks: Record<string, { label: string; href: string }[]> = {
@@ -33,9 +34,7 @@ export function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-2">
             <a href="/" className="inline-flex items-center gap-2">
-              <div className="flex size-9 items-center justify-center rounded-xl bg-primary text-primary-foreground">
-                <Sparkles className="size-5" />
-              </div>
+              <Image src="/logo.png" alt="Nova Analytics" width={32} height={32} className="size-8 dark:invert" />
               <span className="text-xl font-bold text-foreground">Nova Analytics</span>
             </a>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">

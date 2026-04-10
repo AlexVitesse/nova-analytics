@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from "react"
 import { useTheme } from "next-themes"
-import { Sparkles, Menu, Sun, Moon, ArrowRight } from "lucide-react"
+import Image from "next/image"
+import { Menu, Sun, Moon, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import {
   Sheet,
@@ -48,9 +49,7 @@ export function Navbar() {
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Logo */}
         <a href="/" className="flex items-center gap-2.5">
-          <div className="flex size-9 items-center justify-center rounded-xl bg-primary text-primary-foreground">
-            <Sparkles className="size-5" />
-          </div>
+          <Image src="/logo.png" alt="Nova Analytics" width={32} height={32} className="size-8 dark:invert" />
           <span className="text-lg font-bold text-foreground">Nova Analytics</span>
         </a>
 
@@ -126,9 +125,7 @@ export function Navbar() {
               <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
               <div className="flex flex-col p-6">
                 <a href="/" className="flex items-center gap-2.5">
-                  <div className="flex size-9 items-center justify-center rounded-xl bg-primary text-primary-foreground">
-                    <Sparkles className="size-5" />
-                  </div>
+                  <Image src="/logo.png" alt="Nova Analytics" width={32} height={32} className="size-8 dark:invert" />
                   <span className="text-lg font-bold text-foreground">Nova Analytics</span>
                 </a>
                 
