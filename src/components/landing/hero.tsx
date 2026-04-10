@@ -92,7 +92,7 @@ export function Hero() {
         {/* Headline */}
         <h1 className="text-balance text-center text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl">
           <span className="block">Transform your data</span>
-          <span className="mt-2 block bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
+          <span className="mt-2 block bg-gradient-to-r from-indigo-600 via-violet-600 to-indigo-600 bg-clip-text text-transparent dark:from-indigo-400 dark:via-violet-400 dark:to-indigo-400">
             into decisions
           </span>
         </h1>

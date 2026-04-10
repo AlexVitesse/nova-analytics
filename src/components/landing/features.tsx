@@ -93,10 +93,6 @@ export function Features() {
                   {feature.description}
                 </p>
 
-                <div className="mt-6 flex items-center gap-2 text-sm font-medium text-primary opacity-0 transition-all duration-300 group-hover:opacity-100">
-                  <span>Learn more</span>
-                  <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
-                </div>
               </div>
             </Card>
           ))}

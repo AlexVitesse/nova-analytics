@@ -43,20 +43,6 @@ export function Footer() {
               and AI-driven recommendations.
             </p>
 
-            {/* Newsletter */}
-            <div className="mt-6">
-              <p className="text-sm font-medium text-foreground">Subscribe to our newsletter</p>
-              <div className="mt-2 flex gap-2">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="h-10 flex-1 rounded-lg border border-border bg-background px-3 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
-                />
-                <Button size="sm" className="px-4">
-                  Subscribe
-                </Button>
-              </div>
-            </div>
           </div>
 
           {/* Links Columns */}

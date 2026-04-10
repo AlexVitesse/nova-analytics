@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { useTheme } from "next-themes"
-import { Sparkles, Menu, Sun, Moon, ChevronDown, ArrowRight } from "lucide-react"
+import { Sparkles, Menu, Sun, Moon, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import {
   Sheet,
@@ -10,25 +10,12 @@ import {
   SheetTrigger,
   SheetTitle,
 } from "@/components/ui/sheet"
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
 import { cn } from "@/lib/utils"
 
 const navLinks = [
-  { 
-    label: "Product",
-    items: ["Features", "Integrations", "Pricing", "Changelog"]
-  },
-  { 
-    label: "Solutions",
-    items: ["For Startups", "For Enterprise", "For Agencies", "For E-commerce"]
-  },
   { href: "#features", label: "Features" },
   { href: "#pricing", label: "Pricing" },
+  { href: "/about", label: "About" },
 ]
 
 export function Navbar() {
@@ -70,31 +57,13 @@ export function Navbar() {
         {/* Desktop Navigation */}
         <nav className="hidden items-center gap-1 lg:flex">
           {navLinks.map((link) => (
-            link.items ? (
-              <DropdownMenu key={link.label}>
-                <DropdownMenuTrigger asChild>
-                  <Button variant="ghost" size="sm" className="gap-1 text-muted-foreground hover:text-foreground">
-                    {link.label}
-                    <ChevronDown className="size-4" />
-                  </Button>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent align="center" className="w-48">
-                  {link.items.map((item) => (
-                    <DropdownMenuItem key={item} className="cursor-pointer">
-                      {item}
-                    </DropdownMenuItem>
-                  ))}
-                </DropdownMenuContent>
-              </DropdownMenu>
-            ) : (
-              <a
-                key={link.href}
-                href={link.href}
-                className="px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
-              >
-                {link.label}
-              </a>
-            )
+            <a
+              key={link.href}
+              href={link.href}
+              className="px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+            >
+              {link.label}
+            </a>
           ))}
         </nav>
 
@@ -165,32 +134,14 @@ export function Navbar() {
                 
                 <nav className="mt-8 flex flex-col gap-1">
                   {navLinks.map((link) => (
-                    link.items ? (
-                      <div key={link.label} className="py-2">
-                        <p className="mb-2 text-sm font-semibold text-foreground">{link.label}</p>
-                        <div className="flex flex-col gap-1 pl-3">
-                          {link.items.map((item) => (
-                            <a
-                              key={item}
-                              href="#"
-                              onClick={() => setIsOpen(false)}
-                              className="py-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
-                            >
-                              {item}
-                            </a>
-                          ))}
-                        </div>
-                      </div>
-                    ) : (
-                      <a
-                        key={link.href}
-                        href={link.href}
-                        onClick={() => setIsOpen(false)}
-                        className="py-3 text-base font-medium text-muted-foreground transition-colors hover:text-foreground"
-                      >
-                        {link.label}
-                      </a>
-                    )
+                    <a
+                      key={link.href}
+                      href={link.href}
+                      onClick={() => setIsOpen(false)}
+                      className="py-3 text-base font-medium text-muted-foreground transition-colors hover:text-foreground"
+                    >
+                      {link.label}
+                    </a>
                   ))}
                 </nav>
 
