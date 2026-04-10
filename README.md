@@ -2,7 +2,7 @@
 
 Intelligent analytics dashboard for modern teams. Built as a whitelabeled solution for Nova Analytics, featuring a responsive landing page, secure authentication, and a full-featured dashboard.
 
-**Live Demo:** [Coming soon]
+**Live Demo:** [https://nova-analytics-nu.vercel.app](https://nova-analytics-nu.vercel.app)
 
 **Test Credentials:**
 - Email: `reviewer@novaanalytics.io`
