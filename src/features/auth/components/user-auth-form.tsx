@@ -1,72 +1,69 @@
 'use client';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { useAppForm } from '@/components/ui/tanstack-form';
-import { useTransition } from 'react';
+import { Label } from '@/components/ui/label';
+import { createClient } from '@/lib/supabase/client';
+import { useRouter } from 'next/navigation';
+import { useState } from 'react';
 import { toast } from 'sonner';
-import * as z from 'zod';
-import GithubSignInButton from './github-auth-button';
-
-const formSchema = z.object({
-  email: z.string().email({ message: 'Enter a valid email address' })
-});
 
 export default function UserAuthForm() {
-  const [loading, startTransition] = useTransition();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [loading, setLoading] = useState(false);
+  const router = useRouter();
+  const supabase = createClient();
 
-  const form = useAppForm({
-    defaultValues: {
-      email: 'demo@gmail.com'
-    },
-    validators: {
-      onSubmit: formSchema
-    },
-    onSubmit: () => {
-      startTransition(() => {
-        toast.success('Signed In Successfully!');
-      });
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email || !password) {
+      toast.error('Please fill in all fields.');
+      return;
     }
-  });
+
+    setLoading(true);
+    const { error } = await supabase.auth.signInWithPassword({ email, password });
+
+    if (error) {
+      toast.error(error.message);
+      setLoading(false);
+      return;
+    }
+
+    toast.success('Signed in successfully!');
+    router.push('/dashboard/overview');
+    router.refresh();
+  };
 
   return (
-    <>
-      <form.AppForm>
-        <form.Form className='w-full space-y-2'>
-          <form.AppField
-            name='email'
-            children={(field) => (
-              <field.FieldSet>
-                <field.Field>
-                  <field.FieldLabel htmlFor={field.name}>Email</field.FieldLabel>
-                  <Input
-                    id={field.name}
-                    name={field.name}
-                    value={field.state.value}
-                    onBlur={field.handleBlur}
-                    onChange={(e) => field.handleChange(e.target.value)}
-                    placeholder='Enter your email...'
-                    disabled={loading}
-                    aria-invalid={field.state.meta.isTouched && !field.state.meta.isValid}
-                  />
-                </field.Field>
-                <field.FieldError />
-              </field.FieldSet>
-            )}
-          />
-          <Button disabled={loading} className='mt-2 ml-auto w-full' type='submit'>
-            Continue With Email
-          </Button>
-        </form.Form>
-      </form.AppForm>
-      <div className='relative'>
-        <div className='absolute inset-0 flex items-center'>
-          <span className='w-full border-t' />
-        </div>
-        <div className='relative flex justify-center text-xs uppercase'>
-          <span className='bg-background text-muted-foreground px-2'>Or continue with</span>
-        </div>
+    <form onSubmit={handleSubmit} className='w-full space-y-4'>
+      <div className='space-y-2'>
+        <Label htmlFor='email'>Email</Label>
+        <Input
+          id='email'
+          type='email'
+          placeholder='name@novaanalytics.io'
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          disabled={loading}
+          required
+        />
       </div>
-      <GithubSignInButton />
-    </>
+      <div className='space-y-2'>
+        <Label htmlFor='password'>Password</Label>
+        <Input
+          id='password'
+          type='password'
+          placeholder='Enter your password'
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          disabled={loading}
+          required
+        />
+      </div>
+      <Button disabled={loading} className='w-full' type='submit'>
+        {loading ? 'Signing in...' : 'Continue'}
+      </Button>
+    </form>
   );
 }
