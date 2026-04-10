@@ -42,6 +42,11 @@ export async function updateSession(request: NextRequest) {
     return NextResponse.redirect(url);
   }
 
+  // Allow callback route to process OAuth codes without redirect
+  if (path === '/auth/callback') {
+    return supabaseResponse;
+  }
+
   // Redirect authenticated users from auth pages to dashboard
   if (user && path.startsWith('/auth')) {
     const url = request.nextUrl.clone();
