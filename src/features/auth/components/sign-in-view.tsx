@@ -61,7 +61,7 @@ export default function SignInViewPage() {
       <div className='relative hidden h-full flex-col p-10 lg:flex dark:border-r'>
         <div className='absolute inset-0 bg-sidebar' />
         <div className='text-sidebar-foreground relative z-20 flex items-center text-lg font-medium'>
-          <img src='/logo.png' alt='Nova Analytics' className='mr-2 h-6 w-6 invert' />
+          <img src='/logo-icon.png' alt='Nova Analytics' className='mr-2 h-6 w-6 invert' />
           Nova Analytics
         </div>
         <InteractiveGridPattern

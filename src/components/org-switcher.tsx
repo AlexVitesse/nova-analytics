@@ -19,7 +19,7 @@ export function OrgSwitcher() {
           className='data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground'
         >
           <div className='flex aspect-square size-8 shrink-0 items-center justify-center overflow-hidden rounded-lg'>
-            <Image src='/logo.png' alt='Nova Analytics' width={28} height={28} className='dark:invert' />
+            <Image src='/logo-icon.png' alt='Nova Analytics' width={28} height={28} className='dark:invert' />
           </div>
           <div
             className={`grid flex-1 text-left text-sm leading-tight transition-all duration-200 ease-in-out ${

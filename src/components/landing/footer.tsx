@@ -34,7 +34,7 @@ export function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-2">
             <a href="/" className="inline-flex items-center gap-2">
-              <Image src="/logo.png" alt="Nova Analytics" width={32} height={32} className="size-8 dark:invert" />
+              <Image src="/logo-icon.png" alt="Nova Analytics" width={32} height={32} className="size-8 dark:invert" />
               <span className="text-xl font-bold text-foreground">Nova Analytics</span>
             </a>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">

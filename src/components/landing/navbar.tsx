@@ -49,7 +49,7 @@ export function Navbar() {
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Logo */}
         <a href="/" className="flex items-center gap-2.5">
-          <Image src="/logo.png" alt="Nova Analytics" width={32} height={32} className="size-8 dark:invert" />
+          <Image src="/logo-icon.png" alt="Nova Analytics" width={32} height={32} className="size-8 dark:invert" />
           <span className="text-lg font-bold text-foreground">Nova Analytics</span>
         </a>
 
@@ -125,7 +125,7 @@ export function Navbar() {
               <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
               <div className="flex flex-col p-6">
                 <a href="/" className="flex items-center gap-2.5">
-                  <Image src="/logo.png" alt="Nova Analytics" width={32} height={32} className="size-8 dark:invert" />
+                  <Image src="/logo-icon.png" alt="Nova Analytics" width={32} height={32} className="size-8 dark:invert" />
                   <span className="text-lg font-bold text-foreground">Nova Analytics</span>
                 </a>
                 
