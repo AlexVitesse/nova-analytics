@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Sparkles } from "lucide-react"
+import { FadeIn, ScaleIn } from "./motion"
 
 export function CTA() {
   return (
@@ -18,23 +19,30 @@ export function CTA() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
           {/* Badge */}
-          <div className="mb-8 inline-flex items-center gap-2 rounded-full bg-background/10 px-4 py-2 backdrop-blur-sm">
-            <Sparkles className="size-4 text-background" />
-            <span className="text-sm font-medium text-background">Start your free trial today</span>
-          </div>
+          <FadeIn>
+            <div className="mb-8 inline-flex items-center gap-2 rounded-full bg-background/10 px-4 py-2 backdrop-blur-sm">
+              <Sparkles className="size-4 text-background" />
+              <span className="text-sm font-medium text-background">Start your free trial today</span>
+            </div>
+          </FadeIn>
 
           {/* Headline */}
-          <h2 className="text-balance text-3xl font-bold tracking-tight text-background sm:text-4xl lg:text-5xl">
-            Ready to unlock your data&apos;s potential?
-          </h2>
+          <FadeIn delay={0.1}>
+            <h2 className="text-balance text-3xl font-bold tracking-tight text-background sm:text-4xl lg:text-5xl">
+              Ready to unlock your data&apos;s potential?
+            </h2>
+          </FadeIn>
 
           {/* Description */}
+          <FadeIn delay={0.2}>
           <p className="mt-6 text-pretty text-lg text-background/80">
             Join thousands of teams already using Nova Analytics to make better,
             data-driven decisions. Get started in minutes.
           </p>
+          </FadeIn>
 
           {/* CTAs */}
+          <ScaleIn delay={0.3}>
           <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
             <a href="/auth/sign-up">
               <Button
@@ -55,6 +63,8 @@ export function CTA() {
               </Button>
             </a>
           </div>
+
+          </ScaleIn>
 
           {/* Trust Line */}
           <p className="mt-8 text-sm text-background/60">

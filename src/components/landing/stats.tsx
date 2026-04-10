@@ -2,6 +2,7 @@
 
 import { Card } from "@/components/ui/card"
 import { Users, Clock, Zap, Star } from "lucide-react"
+import { StaggerContainer, StaggerItem } from "./motion"
 
 const stats = [
   { 
@@ -37,12 +38,11 @@ export function Stats() {
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-background via-muted/20 to-background" />
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {stats.map((stat, index) => (
-            <Card 
-              key={stat.label}
+        <StaggerContainer className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4" staggerDelay={0.1}>
+          {stats.map((stat) => (
+            <StaggerItem key={stat.label}>
+            <Card
               className="group relative overflow-hidden border-border/50 bg-card/50 p-8 text-center backdrop-blur-sm transition-all duration-300 hover:border-primary/30 hover:shadow-xl"
-              style={{ animationDelay: `${index * 100}ms` }}
             >
               {/* Icon */}
               <div className="mx-auto mb-4 flex size-12 items-center justify-center rounded-full bg-primary/10 text-primary transition-transform duration-300 group-hover:scale-110">
@@ -64,8 +64,9 @@ export function Stats() {
                 {stat.description}
               </p>
             </Card>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
       </div>
     </section>
   )

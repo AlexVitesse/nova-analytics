@@ -3,6 +3,7 @@
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Check, ArrowRight } from "lucide-react"
+import { FadeIn, StaggerContainer, StaggerItem } from "./motion"
 import { Badge } from "@/components/ui/badge"
 
 const plans = [
@@ -65,23 +66,25 @@ export function Pricing() {
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="mx-auto max-w-3xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-wider text-primary">
-            Pricing
-          </p>
-          <h2 className="mt-4 text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-            Simple, transparent pricing
-          </h2>
-          <p className="mt-6 text-pretty text-lg text-muted-foreground">
-            Start free and scale as you grow. No hidden fees, no surprises.
-          </p>
-        </div>
+        <FadeIn>
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="text-sm font-semibold uppercase tracking-wider text-primary">
+              Pricing
+            </p>
+            <h2 className="mt-4 text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
+              Simple, transparent pricing
+            </h2>
+            <p className="mt-6 text-pretty text-lg text-muted-foreground">
+              Start free and scale as you grow. No hidden fees, no surprises.
+            </p>
+          </div>
+        </FadeIn>
 
         {/* Pricing Grid */}
-        <div className="mt-20 grid gap-8 lg:grid-cols-3">
+        <StaggerContainer className="mt-20 grid gap-8 lg:grid-cols-3" staggerDelay={0.15}>
           {plans.map((plan) => (
+            <StaggerItem key={plan.name}>
             <Card
-              key={plan.name}
               className={`group relative flex flex-col overflow-hidden border-border/50 bg-card/50 p-8 backdrop-blur-sm transition-all duration-300 hover:shadow-xl ${
                 plan.popular
                   ? "border-primary/50 shadow-lg shadow-primary/10 ring-1 ring-primary/20"
@@ -132,8 +135,9 @@ export function Pricing() {
                 </Button>
               </a>
             </Card>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
 
         {/* Bottom note */}
         <p className="mt-12 text-center text-sm text-muted-foreground">

@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { ArrowRight, Play, Sparkles } from "lucide-react"
+import { FadeIn, ScaleIn } from "./motion"
 
 export function Hero() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
@@ -80,30 +81,37 @@ export function Hero() {
 
       <div className="mx-auto flex max-w-7xl flex-col items-center px-4 pb-24 pt-32 sm:px-6 sm:pt-40 lg:px-8 lg:pt-48">
         {/* Announcement Badge */}
-        <Badge 
-          variant="outline" 
-          className="mb-8 gap-2 border-primary/30 bg-primary/5 px-4 py-2 text-sm font-medium backdrop-blur-sm"
-        >
-          <Sparkles className="size-4 text-primary" />
-          <span>Introducing AI-Powered Insights</span>
-          <ArrowRight className="size-3.5 text-muted-foreground" />
-        </Badge>
+        <FadeIn delay={0.1}>
+          <Badge
+            variant="outline"
+            className="mb-8 gap-2 border-primary/30 bg-primary/5 px-4 py-2 text-sm font-medium backdrop-blur-sm"
+          >
+            <Sparkles className="size-4 text-primary" />
+            <span>Introducing AI-Powered Insights</span>
+            <ArrowRight className="size-3.5 text-muted-foreground" />
+          </Badge>
+        </FadeIn>
 
         {/* Headline */}
-        <h1 className="text-balance text-center text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl">
-          <span className="block">Transform your data</span>
-          <span className="mt-2 block text-primary">
-            into decisions
-          </span>
-        </h1>
+        <FadeIn delay={0.2}>
+          <h1 className="text-balance text-center text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl">
+            <span className="block">Transform your data</span>
+            <span className="mt-2 block text-primary">
+              into decisions
+            </span>
+          </h1>
+        </FadeIn>
 
         {/* Subheadline */}
-        <p className="mt-6 max-w-2xl text-pretty text-center text-lg text-muted-foreground sm:text-xl">
-          Real-time analytics, seamless team collaboration, and AI-powered insights 
-          to help you make smarter business decisions faster.
-        </p>
+        <FadeIn delay={0.35}>
+          <p className="mt-6 max-w-2xl text-pretty text-center text-lg text-muted-foreground sm:text-xl">
+            Real-time analytics, seamless team collaboration, and AI-powered insights
+            to help you make smarter business decisions faster.
+          </p>
+        </FadeIn>
 
         {/* CTA Buttons */}
+        <ScaleIn delay={0.5}>
         <div className="mt-10 flex flex-col gap-4 sm:flex-row">
           <a href="/auth/sign-up">
             <Button size="lg" className="group gap-2 px-8 text-base">
@@ -118,6 +126,8 @@ export function Hero() {
             </Button>
           </a>
         </div>
+
+        </ScaleIn>
 
         {/* Trust Indicators */}
         <div className="mt-12 flex flex-col items-center gap-4 sm:flex-row sm:gap-8">

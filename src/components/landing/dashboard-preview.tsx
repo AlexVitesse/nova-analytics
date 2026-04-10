@@ -4,6 +4,7 @@ import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { TrendingUp, TrendingDown, Activity, DollarSign, Users, Eye, ArrowUpRight } from "lucide-react"
+import { FadeIn, ScaleIn, Parallax } from "./motion"
 
 const metrics = [
   { 
@@ -46,19 +47,23 @@ export function DashboardPreview() {
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="mx-auto max-w-3xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-wider text-primary">
-            Dashboard
-          </p>
-          <h2 className="mt-4 text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-            See Nova Analytics in action
-          </h2>
-          <p className="mt-6 text-pretty text-lg text-muted-foreground">
-            A powerful dashboard that puts all your data at your fingertips with beautiful visualizations.
-          </p>
-        </div>
+        <FadeIn>
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="text-sm font-semibold uppercase tracking-wider text-primary">
+              Dashboard
+            </p>
+            <h2 className="mt-4 text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
+              See Nova Analytics in action
+            </h2>
+            <p className="mt-6 text-pretty text-lg text-muted-foreground">
+              A powerful dashboard that puts all your data at your fingertips with beautiful visualizations.
+            </p>
+          </div>
+        </FadeIn>
 
         {/* Dashboard Preview */}
+        <Parallax speed={0.15}>
+        <ScaleIn delay={0.2}>
         <div className="relative mt-16">
           {/* Glow Effect */}
           <div className="absolute -inset-4 rounded-3xl bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20 opacity-50 blur-3xl" />
@@ -181,6 +186,8 @@ export function DashboardPreview() {
             </div>
           </Card>
         </div>
+        </ScaleIn>
+        </Parallax>
       </div>
     </section>
   )

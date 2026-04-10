@@ -1,7 +1,8 @@
 "use client"
 
 import { Card } from "@/components/ui/card"
-import { BarChart3, TrendingUp, Shield, Users, Zap, Globe, ArrowRight } from "lucide-react"
+import { BarChart3, TrendingUp, Shield, Users, Zap, Globe } from "lucide-react"
+import { FadeIn, StaggerContainer, StaggerItem } from "./motion"
 
 const features = [
   {
@@ -56,25 +57,26 @@ export function Features() {
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="mx-auto max-w-3xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-wider text-primary">
-            Features
-          </p>
-          <h2 className="mt-4 text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-            Everything you need to understand your data
-          </h2>
-          <p className="mt-6 text-pretty text-lg text-muted-foreground">
-            Powerful features designed to help you analyze, visualize, and act on your data with confidence.
-          </p>
-        </div>
+        <FadeIn>
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="text-sm font-semibold uppercase tracking-wider text-primary">
+              Features
+            </p>
+            <h2 className="mt-4 text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
+              Everything you need to understand your data
+            </h2>
+            <p className="mt-6 text-pretty text-lg text-muted-foreground">
+              Powerful features designed to help you analyze, visualize, and act on your data with confidence.
+            </p>
+          </div>
+        </FadeIn>
 
         {/* Features Grid */}
-        <div className="mt-20 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {features.map((feature, index) => (
-            <Card 
-              key={feature.title}
+        <StaggerContainer className="mt-20 grid gap-6 sm:grid-cols-2 lg:grid-cols-3" staggerDelay={0.12}>
+          {features.map((feature) => (
+            <StaggerItem key={feature.title}>
+            <Card
               className="group relative overflow-hidden border-border/50 bg-card/50 p-8 backdrop-blur-sm transition-all duration-500 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5"
-              style={{ animationDelay: `${index * 100}ms` }}
             >
               {/* Gradient Background on Hover */}
               <div className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} opacity-0 transition-opacity duration-500 group-hover:opacity-100`} />
@@ -95,8 +97,9 @@ export function Features() {
 
               </div>
             </Card>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
       </div>
     </section>
   )
